@@ -1,13 +1,16 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-function BasicExample(param: {
+export interface Card {
+  id: number;
   name: string;
   src: string;
   family: string;
   balance: number;
   wallet: number;
-}) {
+}
+
+function UserCard(param: Card) {
   return (
     <Card style={{ width: "18rem" }}>
       <Card.Img variant="top" src={param.src} />
@@ -15,14 +18,12 @@ function BasicExample(param: {
         <Card.Title>
           {param.name} {param.family}
         </Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Card.Text>{param.balance}</Card.Text>
+        <Card.Text>{param.wallet}</Card.Text>
+        <Button variant="primary">Go to Wallet</Button>
       </Card.Body>
     </Card>
   );
 }
 
-export default BasicExample;
+export default UserCard;
