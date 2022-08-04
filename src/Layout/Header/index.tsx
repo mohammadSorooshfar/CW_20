@@ -15,8 +15,8 @@ function BasicExample() {
             <Nav.Link as={Link} to={"/"}>
               Services
             </Nav.Link>
-            <Nav.Link as={Link} to={"/users"}>
-              Users
+            <Nav.Link as={Link} to={"/addproduct/addinfo"}>
+              add
             </Nav.Link>
             <Nav.Link as={Link} to={"/wallets"}>
               Wallets

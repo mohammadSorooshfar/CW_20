@@ -1,9 +1,7 @@
-import React from 'react';
+import React from "react";
 
-function Index() {
-    return (
-        <div></div>
-    );
+function AccountPage() {
+  return <div></div>;
 }
 
-export default Index;
+export default AccountPage;
