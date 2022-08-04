@@ -1,12 +1,12 @@
 import React from "react";
-import UserCard from "../Compontnts/User";
-import { getData } from "./services";
-import { Card } from "../Compontnts/User";
-function Users() {
-  const [users, setUsers] = React.useState<Card[]>([]);
+import UserCard from "../../Compontnts/UserCard";
+import { ICard } from "../../Compontnts/UserCard";
+
+function Index() {
+  const [users, setUsers] = React.useState<ICard[]>([]);
   const getAllData = async () => {
-    const data = await getData();
-    setUsers(data);
+    // const data = await getData();
+    // setUsers(data);
   };
   React.useEffect(() => {
     getAllData();
@@ -28,4 +28,4 @@ function Users() {
   );
 }
 
-export default Users;
+export default Index;

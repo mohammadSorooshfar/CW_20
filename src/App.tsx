@@ -1,35 +1,30 @@
 import React from "react";
-import { Nav } from "react-bootstrap";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import {Nav} from "react-bootstrap";
+import {BrowserRouter as Router, Route, Routes, Link} from "react-router-dom";
 import "./App.css";
-import Users from "./Pages/Users";
+import {UserWallet, Wallets, User, Users, Accounts, Services, UserAccount} from "./Pages";
+import Layout from "./Layout";
+
 
 function App() {
-  return (
-    <div className="App">
-      <Router>
-        <Nav
-          activeKey="/home"
-          onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
-        >
-          <Nav.Item>
-            <Link to="/Users">Active</Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Link to="/AccountManagment">Link</Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Link to="/Wallets">Link</Link>
-          </Nav.Item>
-        </Nav>
-        <Routes>
-          {/* <Route path ="/Wallets"  element={<Wallets/>}/> */}
-          <Route path="/Users" element={<Users />} />
-          {/* <Route path ="/*" element={<AccountManagment/>}/> */}
-        </Routes>
-      </Router>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Router>
+                <Layout>
+                    <Routes>
+                        <Route path='/' element={<Services/>}/>
+                        <Route path="/Index" element={<Wallets/>}/>
+                        <Route path="/wallet/:id" element={<UserWallet/>}/>
+                        <Route path="/Index" element={<Users/>}/>
+                        <Route path="/user/:id" element={<User/>}/>
+                        <Route path="/accounts" element={<Accounts/>}/>
+                        <Route path='/account/:id' element={<UserAccount/>}/>
+                    </Routes>
+                </Layout>
+
+            </Router>
+        </div>
+    );
 }
 
 export default App;
