@@ -13,15 +13,14 @@ function App() {
                 <Layout>
                     <Routes>
                         <Route path='/' element={<Services/>}/>
-                        <Route path="/Index" element={<Wallets/>}/>
-                        <Route path="/wallet/:id" element={<UserWallet/>}/>
-                        <Route path="/Index" element={<Users/>}/>
-                        <Route path="/user/:id" element={<User/>}/>
+                        <Route path="/wallets" element={<Wallets/>}/>
+                        <Route path="/wallets/:id" element={<UserWallet/>}/>
+                        <Route path="/users" element={<Users/>}/>
+                        <Route path="/users/:id" element={<User/>}/>
                         <Route path="/accounts" element={<Accounts/>}/>
-                        <Route path='/account/:id' element={<UserAccount/>}/>
+                        <Route path='/accounts/:id' element={<UserAccount/>}/>
                     </Routes>
                 </Layout>
-
             </Router>
         </div>
     );
